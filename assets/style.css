@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", serif;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    background: #e7f3ff;
+}
+
+.logo {
+    width: 60px;
+    border-radius: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 99%;
+    background: #496580;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px;
+    border-radius: 999px;
+    padding: 10px;
+    position: sticky;
+    top: 10px;
+    transition: 0.5s all;
+    box-shadow: 0 0 10px #baddff;
+}
+
+::selection {
+    color: #496580;
+    background-color: #baddff;
+}
+
+.link {
+    color: #baddff;
+    font-size: 18px;
+    transition: 0.3s all;
+    padding: 5px;
+}
+
+.link:hover {
+    color: #bafff5;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.search-button {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-button:hover .search-icon {
+    fill: #bafff5;
+}
+
+.search-input {
+    height: 35px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 500px;
+    background: none;
+    border-bottom: 2px solid #baddff;
+    color: #baddff;
+    transition: .5s ease-in-out;
+}
+
+.search-input:focus {
+    border-bottom: 2px solid #bafff5;
+    color: #bafff5;
+}
+
+.search-input:hover {
+    border-bottom: 2px solid #bafff5;
+}
+
+.search-input:hover::placeholder {
+    color: #bafff5;
+}
+
+.search-input:focus::placeholder {
+    color: #bafff5;
+}
+
+.search-input::placeholder {
+    color: #baddff;
+    transition: .5s ease-in-out;
+}
+
+.search-icon {
+    width: 100%;
+    transition: 0.3s all;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 15px;
+    background: #496580;
+    color: #baddff;
+    box-shadow: 0 0 15px #496580;
+    gap: 30px;
+}
+
+.weather-card h1 {
+    font-size: 45px;
+}
+
+.weather-today {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.weather-image {
+    width: 50px;
+}
+
+.air-icon {
+    width: 30px;
+}
+
+.air-container div {
+    width: 400px;
+    height: 100px;
+}
+
+.air-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.air-cond {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map {
+    width: 1200px;
+    height: 600px;
+    border-radius: 100%;
+    border: 2px solid #496580;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+li {
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s all;
+}
+
+li:hover {
+    color: #bafff5;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #496580;
+    box-shadow: 0px 0px 10px #496580;
+    color: #baddff;
+    width: 100%;
+}
+
+.footer-nav {
+    display: flex;
+}
+
+.ionicon {
+    fill: #baddff;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.ionicon:hover {
+    fill: #bafff5;
+    transform: scale(1.2);
+}
+
+footer p {
+    color: #baddff;
+    font-size: 19px;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+.blockElements {
+    padding: 15px;
+    width: 1217px;
+    box-shadow: 0 0 10px #496580;
+    border-radius: 10px;
+    background: #496580;
+    color: #baddff;
+}
+
+.blockElements p {
+    font-size: 25px;
+}
+
+.blockElements h1 {
+    font-size: 35px;
+    margin: 10px;
+    text-align: center;
+}
+
+#arrowUp {
+    background: #496580;
+    border: 1px solid #baddff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 90%;
+    left: 120%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.5s all;
+    z-index: 50;
+}
+
+#arrowUp:hover {
+    background: #baddff;
+    box-shadow: 0 0 10px #baddff;
+}
+
+.blockElements div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.news-image {
+    width: 450px;
+    height: 300px;
+}
+
+.clock {
+    display: flex;
+    gap: 15px;
+    text-align: center;
+}
+
+#weatherIcon {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
