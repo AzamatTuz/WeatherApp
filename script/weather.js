@@ -1,3 +1,5 @@
+//  ########### VARIABLES ###########
+
 const apiKey = 'fb2cff02b71168e9f0c68fd3f83d168a';
 let buttons = document.querySelectorAll('.cityName');
 const cityName = document.getElementById('cityName');
@@ -8,18 +10,22 @@ const weatherText = document.getElementById('weather');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
 
+//  ########### EVENTS ###########
+
 searchBtn.addEventListener('click', () => {
     fetchData(searchInput.value);
     searchInput.value = ''
 })
 
-// fetchData(localStorage.getItem('city'));
-
 if (localStorage.getItem('cityName')) {
     temp.textContent = localStorage.getItem('temp');
     cityName.textContent = localStorage.getItem('cityName');
     weatherText.textContent = localStorage.getItem('weather');
+    windSpeed.textContent = localStorage.getItem('windSpeed');
+    fetchData(localStorage.getItem('city'))
 }
+
+//  ########### FUNCTIONS ###########
 
 async function fetchData(city) {
     try {
@@ -36,27 +42,18 @@ async function fetchData(city) {
         localStorage.setItem('temp', Math.round(data.main.temp - 273.15) + '°C');
         localStorage.setItem('cityName', data.name);
         localStorage.setItem('weather', data.weather[0].main);
+        localStorage.setItem('windSpeed', Math.round(data.wind.speed) + ' km/h');
 
         temp.textContent = Math.round(data.main.temp - 273.15) + '°C';
         cityName.textContent = data.name;
         weatherText.textContent = data.weather[0].main;
-        console.log(data);
+        windSpeed.textContent = Math.round(data.wind.speed) + ' km/h';
 
-        windSpeed.textContent = Math.round(data.wind.speed) + ' km/h'
     } catch (error) {
         console.error(error);
 
     }
 }
-
-
-
-buttons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        fetchData(e.target.textContent);
-        suffleImage()
-    })
-})
 
 function suffleImage() {
 
@@ -68,3 +65,13 @@ function suffleImage() {
         card.style.order = num[random];
     })
 };
+
+
+
+buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        fetchData(e.target.textContent);
+        suffleImage()
+    })
+})
+

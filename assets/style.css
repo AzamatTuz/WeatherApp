@@ -20,6 +20,10 @@ body {
     background: #e7f3ff;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .logo {
     width: 60px;
     border-radius: 100%;
@@ -41,7 +45,6 @@ header {
     position: sticky;
     top: 10px;
     transition: 0.5s all;
-    box-shadow: 0 0 10px #baddff;
 }
 
 ::selection {
@@ -290,7 +293,7 @@ footer p {
     height: 300px;
 }
 
-.clock {
+.time {
     display: flex;
     gap: 15px;
     text-align: center;
@@ -302,3 +305,47 @@ footer p {
     align-items: center;
     justify-content: center;
 }
+
+#clock div {
+    color: #baddff;
+    background: #496580;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.clock {
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    top: 200px;
+    left: 10px;
+    transition: 0.7s all;
+}
+
+.left {
+    left: -77px;
+}
+
+#rotateArrow {
+    transition: 0.7s all;
+}
+
+.rotateArrow {
+    rotate: 180deg;
+}
+
+.clock button {
+    border: none;
+    background: #3c5267;
+    color: #baddff;
+    font-weight: 900;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+}
+
