@@ -38,6 +38,8 @@ async function fetchData(city) {
 
 
         const data = await response.json();
+        console.log(data);
+        
 
         localStorage.setItem('temp', Math.round(data.main.temp - 273.15) + '°C');
         localStorage.setItem('cityName', data.name);

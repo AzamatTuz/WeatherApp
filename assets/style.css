@@ -20,8 +20,16 @@ body {
     background: #e7f3ff;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #baddff;
+}
+
+::-webkit-scrollbar-track {
+    background: #496580;
 }
 
 .logo {
@@ -121,7 +129,7 @@ header {
     transition: 0.3s all;
 }
 
-header div {
+header article {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -348,4 +356,3 @@ footer p {
     border-bottom-right-radius: 5px;
     padding: 5px;
 }
-
